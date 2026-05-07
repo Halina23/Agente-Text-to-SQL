@@ -25,15 +25,17 @@ WHERE s.store_type = 'Loja Física'
 AND o.payment_status = 'paid';
 ```
 
+## 🔄 Fluxo do Projeto
+
+Usuário → Pergunta em linguagem natural → Gemini AI → Query SQL → PostgreSQL → Resposta
+
 ## 🛠 Tecnologias e Ferramentas
 - **Linguagem:** Python 3.13
 - **Banco de Dados:** PostgreSQL (hospedado em nuvem via Neon DB)
 - **Inteligência Artificial:** Google Gemini 2.5 (Generative AI)
 - **Bibliotecas:** `psycopg2` (conexão com o banco), `google-generativeai` (IA), `python-dotenv` (segurança) e `jupyter` (testes).
 
-## 🔄 Fluxo do Projeto
 
-Usuário → Pergunta em linguagem natural → Gemini AI → Query SQL → PostgreSQL → Resposta
 
 ## 💡 O que eu aprendi construindo isso (Meus Destaques)
 Como profissional em nível Júnior, este projeto me trouxe aprendizados muito valiosos que vão além de apenas escrever código:
