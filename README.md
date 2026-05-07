@@ -3,17 +3,37 @@
 ## 📌 O que é este projeto?
 Este é um Agente de Inteligência Artificial criado em Python. Ele funciona como uma "ponte" entre um usuário comum e um banco de dados relacional. Em vez de escrever códigos complexos, o usuário faz uma pergunta em linguagem natural (ex: *"Qual a receita total de vendas pagas da Loja Física?"*), e o agente usa a API do Google Gemini para traduzir isso em uma consulta SQL válida para PostgreSQL.
 
-Desenvolvi este projeto prático para consolidar meus conhecimentos em engenharia de software básica, integração de APIs e banco de dados durante minha transição de carreira para a área de Dados.
+Projeto desenvolvido para explorar integração entre IA generativa, PostgreSQL e automação de consultas SQL em linguagem natural.
 
 ## 🎯 O Problema que este projeto resolve
 **O Gargalo de Dados:** Em muitas empresas, gestores, equipes de vendas e marketing precisam de informações rápidas para tomar decisões, mas não sabem escrever código SQL. Isso faz com que eles dependam totalmente da equipe de Engenharia/Análise de Dados até para perguntas simples, criando um gargalo.
 **A Solução:** Este agente permite que qualquer pessoa da empresa faça perguntas em português simples. A IA entende a intenção, gera a query SQL e a valida no banco de dados automaticamente. Isso **democratiza o acesso aos dados**, acelera a tomada de decisão e libera a equipe técnica para focar em tarefas mais complexas.
+
+## 💬 Exemplo de uso
+
+Pergunta:
+```text
+Qual a receita total de vendas pagas da Loja Física?
+```
+
+SQL gerada:
+```sql
+SELECT SUM(order_total_amount)
+FROM orders o
+JOIN stores s ON o.store_id = s.store_id
+WHERE s.store_type = 'Loja Física'
+AND o.payment_status = 'paid';
+```
 
 ## 🛠 Tecnologias e Ferramentas
 - **Linguagem:** Python 3.13
 - **Banco de Dados:** PostgreSQL (hospedado em nuvem via Neon DB)
 - **Inteligência Artificial:** Google Gemini 2.5 (Generative AI)
 - **Bibliotecas:** `psycopg2` (conexão com o banco), `google-generativeai` (IA), `python-dotenv` (segurança) e `jupyter` (testes).
+
+## 🔄 Fluxo do Projeto
+
+Usuário → Pergunta em linguagem natural → Gemini AI → Query SQL → PostgreSQL → Resposta
 
 ## 💡 O que eu aprendi construindo isso (Meus Destaques)
 Como profissional em nível Júnior, este projeto me trouxe aprendizados muito valiosos que vão além de apenas escrever código:
